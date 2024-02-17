@@ -67,15 +67,6 @@
     }
 }
 
-.avatar{
-    box-sizing: initial;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 8px;
-    border: 4px solid var(--gray-800);
-    outline: 2px solid var(--green-500);
-
-}
 
 .commentForm{
     width: 100%;
@@ -88,11 +79,9 @@
         max-height: none;
     }
 
-
-
 }
 
-.commentForm > strong{
+.commentForm strong{
     font-size: 0.875rem;
     font-weight: bold;
     line-height: 1.6;
@@ -130,11 +119,14 @@
     font-weight: bold;
     transition: background-color 0.2s;
 
-    &:hover{
+    &:not(:disabled):hover{
         background: var(--green-300);
     }
-
-
+    
+    &:disabled{
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
 }
 
 .commentForm footer{
@@ -146,4 +138,8 @@
         visibility: visible;
         max-height: none;
     }
+}
+
+.commentList{
+    margin-top: 2rem;
 }
